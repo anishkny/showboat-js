@@ -24,9 +24,9 @@
     "url": "https://github.com/anishkny/showboat-js.git"
   },
   "bugs": {
-    "url": "https://github.com/simonw/showboat/issues"
+    "url": "https://github.com/anishkny/showboat-js/issues"
   },
-  "homepage": "https://github.com/simonw/showboat#readme",
+  "homepage": "https://github.com/anishkny/showboat-js#readme",
   "engines": {
     "node": ">=14"
   },

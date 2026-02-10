@@ -60,7 +60,7 @@ function getDownloadURL() {
 
 async function downloadFile(url, destPath) {
   return new Promise((resolve, reject) => {
-    https.get(url, { followRedirect: true }, (response) => {
+    https.get(url, (response) => {
       if (response.statusCode === 302 || response.statusCode === 301) {
         // Follow redirect
         downloadFile(response.headers.location, destPath)
@@ -83,7 +83,11 @@ async function downloadFile(url, destPath) {
       });
 
       fileStream.on('error', (err) => {
-        fs.unlink(destPath, () => {});
+        fs.unlink(destPath, (unlinkErr) => {
+          if (unlinkErr) {
+            console.error('Failed to clean up partial download:', unlinkErr.message);
+          }
+        });
         reject(err);
       });
     }).on('error', reject);
@@ -98,8 +102,7 @@ async function extractTarGz(archivePath, destDir) {
 }
 
 async function extractZip(archivePath, destDir) {
-  // For zip files, we'll use a simple approach with unzipper
-  // Since unzipper might not be available, let's use a built-in approach
+  // For zip files, we use adm-zip to extract the archive
   const AdmZip = require('adm-zip');
   const zip = new AdmZip(archivePath);
   zip.extractAllTo(destDir, true);
