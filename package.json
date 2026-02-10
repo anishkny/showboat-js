@@ -1,0 +1,46 @@
+{
+  "name": "showboat",
+  "version": "0.4.0",
+  "description": "Create executable demo documents that show and prove an agent's work",
+  "main": "index.js",
+  "bin": {
+    "showboat": "./bin/showboat.js"
+  },
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "keywords": [
+    "documentation",
+    "demo",
+    "markdown",
+    "executable",
+    "agent",
+    "proof-of-work"
+  ],
+  "author": "Simon Willison (https://github.com/simonw/showboat)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anishkny/showboat-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simonw/showboat/issues"
+  },
+  "homepage": "https://github.com/simonw/showboat#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "tar": "^7.5.7"
+  }
+}
