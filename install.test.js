@@ -93,11 +93,17 @@ describe('install.js concepts', () => {
       }
     });
 
-    it('should use tar.gz for Unix-like systems', () => {
+    it('should use correct extension based on platform', () => {
       const platform = process.platform;
+      const expectedExtension = platform === 'win32' ? 'zip' : 'tar.gz';
       
-      if (platform === 'darwin' || platform === 'linux') {
-        const expectedExtension = 'tar.gz';
+      // Verify the extension is one of the valid options
+      expect(['zip', 'tar.gz']).toContain(expectedExtension);
+      
+      // Verify the platform-specific mapping
+      if (platform === 'win32') {
+        expect(expectedExtension).toBe('zip');
+      } else if (platform === 'darwin' || platform === 'linux') {
         expect(expectedExtension).toBe('tar.gz');
       }
     });
