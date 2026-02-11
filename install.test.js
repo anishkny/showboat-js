@@ -104,31 +104,30 @@ describe('install.js concepts', () => {
   });
 
   describe('platform mapping', () => {
+    const platformMapping = { darwin: 'darwin', linux: 'linux', win32: 'windows' };
+
     it('should map darwin to darwin', () => {
-      const mapping = { darwin: 'darwin', linux: 'linux', win32: 'windows' };
-      expect(mapping.darwin).toBe('darwin');
+      expect(platformMapping.darwin).toBe('darwin');
     });
 
     it('should map linux to linux', () => {
-      const mapping = { darwin: 'darwin', linux: 'linux', win32: 'windows' };
-      expect(mapping.linux).toBe('linux');
+      expect(platformMapping.linux).toBe('linux');
     });
 
     it('should map win32 to windows', () => {
-      const mapping = { darwin: 'darwin', linux: 'linux', win32: 'windows' };
-      expect(mapping.win32).toBe('windows');
+      expect(platformMapping.win32).toBe('windows');
     });
   });
 
   describe('architecture mapping', () => {
+    const archMapping = { x64: 'amd64', arm64: 'arm64' };
+
     it('should map x64 to amd64', () => {
-      const mapping = { x64: 'amd64', arm64: 'arm64' };
-      expect(mapping.x64).toBe('amd64');
+      expect(archMapping.x64).toBe('amd64');
     });
 
     it('should map arm64 to arm64', () => {
-      const mapping = { x64: 'amd64', arm64: 'arm64' };
-      expect(mapping.arm64).toBe('arm64');
+      expect(archMapping.arm64).toBe('arm64');
     });
   });
 });

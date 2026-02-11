@@ -13,6 +13,8 @@ jobs:
     
     strategy:
       matrix:
+        # Testing on Node 14 and 16 for backward compatibility (package.json specifies >=14)
+        # Note: Node 14 and 16 are EOL but still in the support range
         node-version: [14, 16, 18, 20]
         os: [ubuntu-latest, macos-latest, windows-latest]
     
@@ -44,6 +46,8 @@ jobs:
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: false
+        # Note: Configure CODECOV_TOKEN secret in repository settings if using private repo
+        # token: ${{ secrets.CODECOV_TOKEN }}
 
   lint:
     name: Lint
