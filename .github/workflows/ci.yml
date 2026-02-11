@@ -16,10 +16,10 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
         cache: 'npm'
@@ -33,13 +33,3 @@ jobs:
     - name: Test showboat binary installation
       run: |
         node -e "const showboat = require('./index'); console.log('Binary path:', showboat.binaryPath);"
-    
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
-      with:
-        files: ./coverage/lcov.info
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: false
-        # Note: Configure CODECOV_TOKEN secret in repository settings if using private repo
-        # token: ${{ secrets.CODECOV_TOKEN }}
