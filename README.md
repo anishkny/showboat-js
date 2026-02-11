@@ -49,16 +49,16 @@ For more information, see the [showboat documentation](https://github.com/simonw
 You can also use showboat programmatically in your Node.js code:
 
 ```javascript
-const showboat = require('showboat');
+const showboat = require("showboat");
 
 // Execute showboat with arguments
-const result = await showboat(['--version']);
-console.log(result.stdout); // "0.4.0"
+const result = await showboat(["--version"]);
+console.log(result.stdout); // showboat version
 
 // Create a demo document
-await showboat(['init', 'demo.md', 'My Demo']);
-await showboat(['note', 'demo.md', 'This is a note']);
-const output = await showboat(['exec', 'demo.md', 'bash', 'echo Hello']);
+await showboat(["init", "demo.md", "My Demo"]);
+await showboat(["note", "demo.md", "This is a note"]);
+const output = await showboat(["exec", "demo.md", "bash", "echo Hello"]);
 console.log(output.stdout); // "Hello"
 ```
 
@@ -82,18 +82,6 @@ npm run test:watch
 # Run tests with coverage
 npm run test:coverage
 ```
-
-### Continuous Integration
-
-This project uses GitHub Actions for CI. The workflow:
-- Tests on Node.js 14, 16, 18, and 20
-- Tests on Ubuntu, macOS, and Windows
-- Ensures the binary installs correctly on all platforms
-- Uploads coverage reports
-
-The CI workflow runs automatically on:
-- Pushes to the main branch
-- Pull requests to the main branch
 
 ## License
 
