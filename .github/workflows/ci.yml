@@ -11,6 +11,9 @@ jobs:
     name: Test on Node.js ${{ matrix.node-version }} - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     
+    permissions:
+      contents: read
+    
     strategy:
       matrix:
         # Testing on Node 14 and 16 for backward compatibility (package.json specifies >=14)
@@ -52,6 +55,9 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
