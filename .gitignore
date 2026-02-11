@@ -4,3 +4,5 @@ bin/showboat.exe
 package-lock.json
 *.log
 .DS_Store
+coverage/
+.jest-cache/
