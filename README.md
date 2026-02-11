@@ -44,6 +44,24 @@ cat demo.md
 
 For more information, see the [showboat documentation](https://github.com/simonw/showboat).
 
+## Programmatic API
+
+You can also use showboat programmatically in your Node.js code:
+
+```javascript
+const showboat = require('showboat');
+
+// Execute showboat with arguments
+const result = await showboat(['--version']);
+console.log(result.stdout); // "0.4.0"
+
+// Create a demo document
+await showboat(['init', 'demo.md', 'My Demo']);
+await showboat(['note', 'demo.md', 'This is a note']);
+const output = await showboat(['exec', 'demo.md', 'bash', 'echo Hello']);
+console.log(output.stdout); // "Hello"
+```
+
 ## About
 
 This is an npm wrapper around the [showboat](https://github.com/simonw/showboat) Go binary. It automatically downloads the appropriate binary for your platform during installation.
