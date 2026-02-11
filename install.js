@@ -145,10 +145,14 @@ async function install() {
     }
 
     console.log('showboat installed successfully!');
+    process.exit(0);
   } catch (error) {
     console.error('Installation failed:', error.message);
     process.exit(1);
   }
 }
 
-install();
+// Only run install if this script is executed directly
+if (require.main === module) {
+  install();
+}

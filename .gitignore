@@ -1,6 +1,7 @@
 node_modules/
 bin/showboat
 bin/showboat.exe
-package-lock.json
 *.log
 .DS_Store
+coverage/
+.jest-cache/

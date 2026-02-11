@@ -66,6 +66,35 @@ console.log(output.stdout); // "Hello"
 
 This is an npm wrapper around the [showboat](https://github.com/simonw/showboat) Go binary. It automatically downloads the appropriate binary for your platform during installation.
 
+## Development
+
+### Running Tests
+
+This project includes automated tests using Jest:
+
+```bash
+# Run tests once
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Continuous Integration
+
+This project uses GitHub Actions for CI. The workflow:
+- Tests on Node.js 14, 16, 18, and 20
+- Tests on Ubuntu, macOS, and Windows
+- Ensures the binary installs correctly on all platforms
+- Uploads coverage reports
+
+The CI workflow runs automatically on:
+- Pushes to the main branch
+- Pull requests to the main branch
+
 ## License
 
 Apache-2.0 (same as showboat)
