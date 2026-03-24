@@ -38,7 +38,7 @@ describe('showboat module', () => {
         const result = await showboat(['--version']);
         expect(result).toHaveProperty('stdout');
         expect(result).toHaveProperty('stderr');
-        expect(result.stdout).toContain('0.4.0');
+        expect(result.stdout).toContain('0.6.1');
       }, 10000);
 
       it('should execute showboat binary with --help flag', async () => {

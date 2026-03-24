@@ -10,7 +10,7 @@ const tar = require('tar');
 
 const streamPipeline = promisify(pipeline);
 
-const SHOWBOAT_VERSION = '0.4.0';
+const SHOWBOAT_VERSION = '0.6.1';
 const BASE_URL = `https://github.com/simonw/showboat/releases/download/v${SHOWBOAT_VERSION}`;
 
 function getPlatformInfo() {

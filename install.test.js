@@ -44,13 +44,13 @@ describe('install.js concepts', () => {
       
       expectedExtension = platform === 'win32' ? 'zip' : 'tar.gz';
       
-      const expectedUrl = `https://github.com/simonw/showboat/releases/download/v0.4.0/showboat-${expectedPlatform}-${expectedArch}.${expectedExtension}`;
+      const expectedUrl = `https://github.com/simonw/showboat/releases/download/v0.6.1/showboat-${expectedPlatform}-${expectedArch}.${expectedExtension}`;
       
       // Verify the URL format is correct
       expect(expectedUrl).toContain('github.com');
       expect(expectedUrl).toContain('simonw/showboat');
       expect(expectedUrl).toContain('releases/download');
-      expect(expectedUrl).toContain('v0.4.0');
+      expect(expectedUrl).toContain('v0.6.1');
       expect(expectedUrl).toContain(expectedPlatform);
       expect(expectedUrl).toContain(expectedArch);
       expect(expectedUrl).toContain(expectedExtension);
